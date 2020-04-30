@@ -7,12 +7,12 @@ using OpenTK.Graphics.OpenGL;
 
 namespace Colicion_Simple
 {
-	/// <summary>
-	/// Description of ScreenColision.
-	/// </summary>
+	
 	public class ScreenColision : GameWindow
 	{
 		Circulo a;
+		Circulo b;
+		
 		bool colx;
 		double des;
 		public ScreenColision(int ancho, int alto) : base(ancho,alto)
@@ -23,6 +23,7 @@ namespace Colicion_Simple
 		{
 			GL.ClearColor(Color.CornflowerBlue);
 			a = new Circulo();
+			b = new Circulo();
 			colx = false;
 			des = 0.0;
 		}
@@ -36,6 +37,7 @@ namespace Colicion_Simple
 		{
 			
 			a.Dibuja(des,0,0.15);
+			b.Dibuja(1,0,0.10);
 			if(!colx)
 			{
 				des += 0.01;
