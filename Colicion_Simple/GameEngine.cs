@@ -6,20 +6,39 @@ namespace Colicion_Simple
 	
 	public class GameEngine
 	{
+		double despx; //despy;
+		
 		public GameEngine()
 		{
 		}
 		
-		public void colisionObj(Circulo a, Circulo b)
+		public void colisionObj(Circulo a, Circulo[] b)
 		{
 			MyVector colision = new MyVector();
 			
-			colision.CalculaDisCir(a,b);
-			
-			if(colision.Vd < 0)
+			for(int i=0 ; i < b.Length; i++)
 			{
-				Console.WriteLine("Colision !!!!");
-				a.checcol = true;
+				if(!a.checcol)
+				{
+					despx += 0.009;
+					a.X = despx;
+					colision.CalculaDisCir(a,b[i]);
+					
+					if(colision.Vd < 0)
+					{
+						a.checcol = true;
+					}
+				}else
+				{
+					despx -= 0.009;
+					a.X = despx;
+					colision.CalculaDisCir(a,b[i]);
+					
+					if(colision.Vd < 0)
+					{
+						a.checcol = false;
+					}
+				}
 			}
 		}
 	}

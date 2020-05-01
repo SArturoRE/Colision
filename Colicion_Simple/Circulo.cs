@@ -32,7 +32,8 @@ namespace Colicion_Simple
 			r = rad;
 			
 			GL.Begin(PrimitiveType.LineLoop);
-			//GL.Color4(0.0,0.0,0.0);
+			//GL.Color3(0.5,0.2,0.9);
+			//GL.ClearColor(Color.White);
 			for(double i = 0; i < Math.PI*2; i += 0.01)
 			{
 				GL.Vertex2((x + Math.Cos(i) * r),(y + Math.Sin(i) * r));
@@ -45,7 +46,8 @@ namespace Colicion_Simple
 		{
 			
 			GL.Begin(PrimitiveType.LineLoop);
-			//GL.Color4(0.0,0.0,0.0);
+			//GL.Color3(0.5,0.2,0.9);
+			//GL.ClearColor(Color.White);
 			for(double i = 0; i < Math.PI*2; i += 0.01)
 			{
 				GL.Vertex2((x + Math.Cos(i) * r),(y + Math.Sin(i) * r));
@@ -57,16 +59,19 @@ namespace Colicion_Simple
 		public double X
 		{
 			get{return x;}
+			set{x = value;}
 		}
 		
 		public double Y
 		{
 			get{return y;}
+			set{x = value;}
 		}
 		
 		public double R
 		{
 			get {return r;}
+			set {r = value;}
 		}
 		
 		public bool checcol
