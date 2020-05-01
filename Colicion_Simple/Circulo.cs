@@ -67,7 +67,7 @@ namespace Colicion_Simple
 		public double Y
 		{
 			get{return y;}
-			set{x = value;}
+			set{y = value;}
 		}
 		
 		public double R

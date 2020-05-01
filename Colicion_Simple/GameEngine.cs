@@ -21,9 +21,77 @@ namespace Colicion_Simple
 			{
 				if(!a.checcol)
 				{
-					despx += 0.009;
+					despx += 0.001;
 					a.X = despx;
-					//a.Y = despy;
+					colision.CalculaDisCir(a,b[i]);
+					
+					if(colision.Vd < 0)
+					{
+						a.checcol = true;
+					}
+					
+					//Movimiento en y
+					if(!a.CY)
+					{
+						despy += 0.001;
+						a.Y = despy;
+						if(despy == 0.9)
+						{
+							a.CY = true;
+						}
+					}else
+					{
+						despy -= 0.001;
+						a.Y = despy;
+						if(despy == -0.9)
+						{
+							a.CY = false;
+						}
+					}
+					
+					
+					
+					
+				}else
+				{
+					despx -= 0.001;
+					a.X = despx;
+					colision.CalculaDisCir(a,b[i]);
+					
+					if(colision.Vd < 0)
+					{
+						a.checcol = false;
+					}
+					
+					//Movimiento en y
+					if(!a.CY)
+					{
+						despy += 0.001;
+						a.Y = despy;
+						if(despy < 0.9)
+						{
+							a.CY = true;
+						}
+					}else
+					{
+						despy -= 0.001;
+						a.Y = despy;
+						if(despy < -0.9)
+						{
+							a.CY = false;
+						}
+					}
+					
+				}
+				
+				
+				
+				//Moveremos la vola en Y
+				
+				/*if(!a.checcol)
+				{
+					despy += 0.001;
+					a.Y = despy;
 					colision.CalculaDisCir(a,b[i]);
 					
 					if(colision.Vd < 0)
@@ -32,8 +100,8 @@ namespace Colicion_Simple
 					}
 				}else
 				{
-					despx -= 0.009;
-					a.X = despx;
+					despy -= 0.001;
+					a.Y = despy;
 					colision.CalculaDisCir(a,b[i]);
 					
 					if(colision.Vd < 0)
@@ -41,9 +109,8 @@ namespace Colicion_Simple
 						a.checcol = false;
 					}
 				}
-				//Moveremos la vola en Y
 				
-				
+			*/	
 			}
 		}
 	}
