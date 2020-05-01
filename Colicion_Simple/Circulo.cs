@@ -10,11 +10,13 @@ namespace Colicion_Simple
 	{
 		double x,y,r;
 		bool circcol;
+		bool colisiony;
 		
 		public Circulo()
 		{
 			x = y = r = 0.0;
 			circcol = false;
+			colisiony = false;
 		}
 		
 		public void Datos(double cx, double cy, double rad)
@@ -78,6 +80,12 @@ namespace Colicion_Simple
 		{
 			get { return circcol;}
 			set { circcol = value;}
+		}
+		
+		public bool CY
+		{
+			get{return colisiony;}
+			set{colisiony = value;}
 		}
 	}
 }

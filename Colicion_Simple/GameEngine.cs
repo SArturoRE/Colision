@@ -6,7 +6,8 @@ namespace Colicion_Simple
 	
 	public class GameEngine
 	{
-		double despx; //despy;
+		double despx = 0.0;
+		double despy = 0.0;
 		
 		public GameEngine()
 		{
@@ -22,6 +23,7 @@ namespace Colicion_Simple
 				{
 					despx += 0.009;
 					a.X = despx;
+					//a.Y = despy;
 					colision.CalculaDisCir(a,b[i]);
 					
 					if(colision.Vd < 0)
@@ -39,6 +41,9 @@ namespace Colicion_Simple
 						a.checcol = false;
 					}
 				}
+				//Moveremos la vola en Y
+				
+				
 			}
 		}
 	}
