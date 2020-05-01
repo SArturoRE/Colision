@@ -12,9 +12,10 @@ namespace Colicion_Simple
 	{
 		Circulo a;
 		Circulo b;
-		
-		bool colx;
+		GameEngine motor;
 		double des;
+		bool colx;
+		
 		public ScreenColision(int ancho, int alto) : base(ancho,alto)
 		{
 		}
@@ -24,8 +25,10 @@ namespace Colicion_Simple
 			GL.ClearColor(Color.CornflowerBlue);
 			a = new Circulo();
 			b = new Circulo();
-			colx = false;
+			motor = new GameEngine();
 			des = 0.0;
+			a.Datos(0,0,0.15);
+			b.Datos(0.8,0,0.10);
 		}
 		
 		protected override void OnUpdateFrame(FrameEventArgs e)
@@ -36,23 +39,25 @@ namespace Colicion_Simple
 		protected override void OnRenderFrame(FrameEventArgs e)
 		{
 			
-			a.Dibuja(des,0,0.15);
-			b.Dibuja(1,0,0.10);
-			if(!colx)
+			a.Dibuja();
+			b.Dibuja();
+			motor.colisionObj(a,b);
+			
+			/*if(!colx)
 			{
-				des += 0.01;
-				if(a.X > 1)
+				des += 0.009;
+				if(des < 0)
 				{
 					colx = true;
 				}
 			}else
 			{
-				des -= 0.01;
-				if(a.X < -1)
+				des -= 0.009;
+				if(des > 1)
 				{
 					colx = false;
 				}
-			}
+			}*/
 			SwapBuffers();
 			
 			
