@@ -9,6 +9,8 @@ namespace Colicion_Simple
 		double despx = 0.0;
 		double despy = 0.0;
 		
+		//double despa = 0.0;
+		
 		public GameEngine()
 		{
 		}
@@ -31,21 +33,21 @@ namespace Colicion_Simple
 					}
 					
 					//Movimiento en y
-					if(!a.CY)
+					if(!a.ColY)
 					{
 						despy += 0.001;
 						a.Y = despy;
-						if(despy == 0.9)
+						if(colision.Vd < 0)
 						{
-							a.CY = true;
+							a.ColY = true;
 						}
 					}else
 					{
 						despy -= 0.001;
 						a.Y = despy;
-						if(despy == -0.9)
+						if(despy < -0.8)
 						{
-							a.CY = false;
+							a.ColY = false;
 						}
 					}
 					
@@ -64,21 +66,21 @@ namespace Colicion_Simple
 					}
 					
 					//Movimiento en y
-					if(!a.CY)
+					if(!a.ColY)
 					{
 						despy += 0.001;
 						a.Y = despy;
-						if(despy < 0.9)
+						if(colision.Vd < 0)
 						{
-							a.CY = true;
+							a.ColY = true;
 						}
 					}else
 					{
 						despy -= 0.001;
 						a.Y = despy;
-						if(despy < -0.9)
+						if(colision.Vd < 0)
 						{
-							a.CY = false;
+							a.ColY = false;
 						}
 					}
 					

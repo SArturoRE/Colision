@@ -82,7 +82,7 @@ namespace Colicion_Simple
 			set { circcol = value;}
 		}
 		
-		public bool CY
+		public bool ColY
 		{
 			get{return colisiony;}
 			set{colisiony = value;}
