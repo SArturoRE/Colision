@@ -8,8 +8,8 @@ namespace Colicion_Simple
 	{
 		double despx = 0.0;
 		double despy = 0.0;
-		
-		//double despa = 0.0;
+		byte[] verde = {0x00, 0xFF, 0xFF};
+        byte[] blanco = {0xFF, 0xFF, 0xFF};
 		
 		public GameEngine()
 		{
@@ -30,20 +30,23 @@ namespace Colicion_Simple
 					if(colision.Vd < 0)
 					{
 						a.checcol = true;
+						//b[i].colorcirculo(verde);
 					}
+					
 					
 					//Movimiento en y
 					if(!a.ColY)
 					{
-						despy += 0.001;
+						despy += 0.0009;
 						a.Y = despy;
+						
 						if(colision.Vd < 0)
 						{
 							a.ColY = true;
 						}
 					}else
 					{
-						despy -= 0.001;
+						despy -= 0.0009;
 						a.Y = despy;
 						if(despy < -0.8)
 						{
@@ -63,8 +66,9 @@ namespace Colicion_Simple
 					if(colision.Vd < 0)
 					{
 						a.checcol = false;
+						b[i].colorcirculo(blanco);
 					}
-					
+					b[i].colorcirculo(blanco);
 					//Movimiento en y
 					if(!a.ColY)
 					{

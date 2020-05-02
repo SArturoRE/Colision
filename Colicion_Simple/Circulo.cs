@@ -11,6 +11,7 @@ namespace Colicion_Simple
 		double x,y,r;
 		bool circcol;
 		bool colisiony;
+		byte[] color = {0xFF, 0xFF, 0xFF};
 		
 		public Circulo()
 		{
@@ -48,7 +49,7 @@ namespace Colicion_Simple
 		{
 			
 			GL.Begin(PrimitiveType.LineLoop);
-			//GL.Color3(0.5,0.2,0.9);
+			GL.Color3(color);
 			//GL.ClearColor(Color.White);
 			for(double i = 0; i < Math.PI*2; i += 0.01)
 			{
@@ -86,6 +87,11 @@ namespace Colicion_Simple
 		{
 			get{return colisiony;}
 			set{colisiony = value;}
+		}
+		
+		public void colorcirculo(byte[] a)
+		{
+			color = a;
 		}
 	}
 }
